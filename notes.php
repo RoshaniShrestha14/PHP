@@ -7,8 +7,7 @@ $db = new Database();
 $statement =$db->query("SELECT * FROM note");
 
 $notes=$statement->fetchAll();
-dd($notes);
-
+// dd($notes);
 
 
 $navTitle="Notes";
