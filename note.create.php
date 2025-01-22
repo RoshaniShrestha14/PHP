@@ -7,16 +7,16 @@ $db = new Database();
 
 // ----Handles note creation----
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $body = $_POST['body'];
+  $Body = $_POST['Body'];
 
   $errors = [];
 
-  if (empty($body)) {
-    $errors['body'] = "Body is required";
+  if (empty($Body)) {
+    $errors['Body'] = "Body is required";
   }
 
   if (empty($errors)) {
-    $db->query("INSERT INTO note (body) VALUES (:body)", [':body' => $body]);
+    $db->query("INSERT INTO note (Body) VALUES (:Body)", [':Body' => $Body]);
 
     header('Location: notes.php');
   }
