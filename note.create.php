@@ -14,15 +14,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if (empty($Body)) {
     $errors['Body'] = "Body is required";
   }
-
   if (empty($errors)) {
     $db->query("INSERT INTO note (Body) VALUES (:Body)", [':Body' => $Body]);
 
     header('Location: notes.php');
   }
 }
-// ------------------------------
-
 $navTitle = "Create Note";
-
 include 'views/note-create-update.view.php';
